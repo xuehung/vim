@@ -1,4 +1,4 @@
-
+" Check if Vundle is installed. If not, install it.
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
@@ -41,18 +41,21 @@ set laststatus=2
 set background=dark
 colorscheme solarized_dark
 
+" alternative color scheme.
+"colorscheme Tomorrow-Night-Eighties
+
 syntax on
 set number
 set encoding=utf-8
 set numberwidth=4
 set shiftwidth=4
 set tabstop=4
-set expandtab                         " on pressing tab, insert 4 spaces
+set expandtab                 " on pressing tab, insert 4 spaces
 set title
-set hlsearch                          " search highlighting
-set incsearch                         " incremental search
-set copyindent                        " copy the previous indentation on autoindenting
-set smarttab                          " insert tabs on the start of a line according to
+set hlsearch                  " search highlighting
+set incsearch                 " incremental search
+set copyindent                " copy the previous indentation on autoindenting
+set smarttab                  " insert tabs on the start of a line according to
 set history=1000
 set showcmd
 set showmode
@@ -65,4 +68,6 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-
+" Highlight lines exceeding 80 chracters.
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/

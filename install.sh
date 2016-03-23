@@ -34,7 +34,8 @@ then
         echo "Your old .vimrc has been deleted."
     else
         backupvimrc="$VIMRC_LOCATION-$(date +%Y%m%d)-$RAND"
-        mv $VIMRC_LOCATION $backupvimrc
+        cp $VIMRC_LOCATION $backupvimrc
+        rm -r $VIMRC_LOCATION
         echo "Your old .vimrc has been renamed to $backupvimrc."
     fi
 fi
@@ -43,6 +44,10 @@ git clone $GIT_REPO $VIM_LOCATION
 
 # Create the symbolic link.
 ln -s $VIM_LOCATION/vimrc $VIMRC_LOCATION
+
+# Configuration
+read -p "What is your name (This will be used in comments)?" name
+echo "let g:snips_author = '$name'" >> $VIMRC_LOCATION
 
 # Install plugins.
 vim +PluginInstall +qall
