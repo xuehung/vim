@@ -17,7 +17,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
@@ -32,8 +32,8 @@ Plugin 'garbas/vim-snipmate'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" ==== PowerLine
-" let g:Powerline_symbols = 'fancy' " require fontpatcher
+" ==== Airline
+let g:airline_powerline_fonts = 1
 set laststatus=2
 
 
@@ -64,3 +64,5 @@ let mapleader=","
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+
