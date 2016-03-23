@@ -1,5 +1,5 @@
 # Installation
-`/bin/bash "$(curl -fsSL https://github.com/xuehung/vim/install.sh)"`
+`bash -c "$(curl -fSsL https://raw.githubusercontent.com/xuehung/vim/master/install.sh)"`
 
 # Usage
 

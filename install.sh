@@ -44,4 +44,7 @@ git clone $GIT_REPO $VIM_LOCATION
 # Create the symbolic link.
 ln -s $VIM_LOCATION/vimrc $VIMRC_LOCATION
 
+# Install plugins.
+vim +PluginInstall +qall
+
 echo "Installation completed."
