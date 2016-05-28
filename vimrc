@@ -23,10 +23,13 @@ Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'The-NERD-tree'
 Plugin 'majutsushi/tagbar'
-
 Plugin 'MarcWeber/vim-addon-mw-utils' " SnipMate and its dependencies
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'tfnico/vim-gradle'
+Plugin 'tpope/vim-surround'
+Plugin 'raimondi/delimitmate'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -35,7 +38,6 @@ filetype plugin indent on    " required
 " ==== Airline
 let g:airline_powerline_fonts = 1
 set laststatus=2
-
 
 " ==== solarlized
 set background=dark
@@ -56,7 +58,7 @@ set hlsearch                  " search highlighting
 set incsearch                 " incremental search
 set copyindent                " copy the previous indentation on autoindenting
 set smarttab                  " insert tabs on the start of a line according to
-set history=1000
+set history=100
 set showcmd
 set showmode
 set visualbell
@@ -71,3 +73,13 @@ endif
 " Highlight lines exceeding 80 chracters.
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+" cancel searched highlight
+noremap <CR> :nohlsearch<CR>
+
+" set gradle compiler for .java files
+au BufRead *.java :compiler gradle
+
+
+let g:SuperTabCrMapping=1               " No newline after auto completion
+

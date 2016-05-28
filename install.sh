@@ -46,7 +46,7 @@ git clone $GIT_REPO $VIM_LOCATION
 ln -s $VIM_LOCATION/vimrc $VIMRC_LOCATION
 
 # Configuration
-read -p "What is your name (This will be used in comments)?" name
+read -p "What is your name (This will be used in comments)? " name
 echo "let g:snips_author = '$name'" >> $VIMRC_LOCATION
 
 # Install plugins.
