@@ -3,7 +3,8 @@
 
 # Usage of Installed Plugins
 - [The Nerd Tree](https://github.com/scrooloose/nerdtree): a tree explorer plugin for the filesystem
-  Press `nt` to toggle the navigator.
+    
+    Press `nt` to toggle the navigator.
 - [Easymotion](https://github.com/easymotion/vim-easymotion): helps move your cursor in fancy way
   Press `s` to start searching and moving.
 - [Tagbar](https://github.com/majutsushi/tagbar/wiki): provides an easy way to browse the tags such as names of functions and variables
